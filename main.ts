@@ -984,7 +984,7 @@ namespace colorbit {
                 + Math.idiv(p * 433, 10000); /* rought approximation */
         }
 		
-		/**
+	/**
          * Show ColorBit WhaleySansFont number with a given color (range 0-255 for r, g, b). 
          * @param dat LED number showing
          * @param rgbFront Front RGB color of the LED
@@ -994,23 +994,25 @@ namespace colorbit {
         //% blockGap=8
         //% weight=11
         //% parts="colorbit"
-		//% dat.min=0 dat.max=99
+	//% dat.min=0 dat.max=99
         showWhaleySansFontColor(dat: number, rgbFront: number, rgbBackground: number): void {
-		    if(dat<0) dat=0;
-			rgbFront = rgbFront >> 0;
-			rgbBackground = rgbBackground >> 0;
+		if(dat<0) dat=0;
+		rgbFront = rgbFront >> 0;
+		rgbBackground = rgbBackground >> 0;
 
-			let a = WFONT[Math.idiv(dat, 10) % 10];
-			let b = WFONT[dat % 10];
+		let a = WFONT[Math.idiv(dat, 10) % 10];
+		let b = WFONT[dat % 10];
 
-			for (let i = 0; i < 5; i++) {
-				for (let j=0; j<5; j++) this.setPixelColor(i*5+j, rgbBackground);
-				if(1 == a[i * 2])this.setPixelColor(i*5,rgbFront);
-				if(1 == a[i * 2 + 1])this.setPixelColor((1+i*5),rgbFront);
-				if(1 == b[i * 2])this.setPixelColor((3+i*5),rgbFront);
-				if(1 == b[i * 2 + 1])this.setPixelColor((4+i*5),rgbFront);
-			}
-			this.show();
+		for (let i = 0; i < 5; i++) {
+			for (let j=0; j<5; j++) this.setPixelColor(i*5+j, rgbBackground);
+		}
+		for (let i = 0; i < 5; i++) {
+			if(1 == a[i * 2])this.setPixelColor(i*5,rgbFront);
+			if(1 == a[i * 2 + 1])this.setPixelColor((1+i*5),rgbFront);
+			if(1 == b[i * 2])this.setPixelColor((3+i*5),rgbFront);
+			if(1 == b[i * 2 + 1])this.setPixelColor((4+i*5),rgbFront);
+		}
+		this.show();
         }
 
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
