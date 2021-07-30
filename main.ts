@@ -986,7 +986,7 @@ namespace colorbit {
 		
 		/**
          * Show ColorBit WhaleySansFont number with a given color (range 0-255 for r, g, b). 
-         * @param input LED number showing
+         * @param dat LED number showing
          * @param rgbFront Front RGB color of the LED
          * @param rgbBackground rgbBackground RGB color of the LED
          */
