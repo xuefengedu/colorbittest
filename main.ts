@@ -998,6 +998,7 @@ namespace colorbit {
         showWhaleySansFontColor(dat: number, rgbFront: number, rgbBackground: number): void {
 		    if(dat<0) dat=0;
 			rgbFront = rgbFront >> 0;
+			rgbBackground = rgbBackground >> 0;
 
 			let a = WFONT[Math.idiv(dat, 10) % 10];
 			let b = WFONT[dat % 10];
